@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mail Testing Portal</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <div class="header">
+        <div class="mail-icon">✉</div>
+
+        <div>
+          <h1>Mail Testing Portal</h1>
+          <p>Send a test email from your authorized domain mailbox.</p>
+        </div>
+      </div>
+
+
+      <form id="mailForm" enctype="multipart/form-data">
+
+        <!-- FROM -->
+        <div class="form-group">
+          <label for="from">From</label>
+
+          <input
+            type="email"
+            id="from"
+            value="Configured domain email"
+            disabled
+          >
+
+          <small>
+            The From address is controlled by the server configuration.
+          </small>
+        </div>
+
+
+        <!-- TO -->
+        <div class="form-group">
+
+          <label for="to">
+            To <span>*</span>
+          </label>
+
+          <input
+            type="email"
+            id="to"
+            name="to"
+            placeholder="receiver@example.com"
+            required
+          >
+
+        </div>
+
+
+        <!-- SUBJECT -->
+        <div class="form-group">
+
+          <label for="subject">
+            Subject <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Test Mail"
+            required
+          >
+
+        </div>
+
+
+        <!-- ATTACHMENT -->
+        <div class="form-group">
+
+          <label for="attachment">
+            Attachment
+          </label>
+
+          <input
+            type="file"
+            id="attachment"
+            name="attachment"
+          >
+
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div class="form-group">
+
+          <label for="message">
+            Message <span>*</span>
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="10"
+            placeholder="Write your test message here..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <!-- SEND BUTTON -->
+        <button
+          type="submit"
+          id="sendBtn"
+        >
+          Send Test Mail
+        </button>
+
+      </form>
+
+
+      <!-- STATUS -->
+      <div
+        id="status"
+        class="status"
+        hidden
+      ></div>
+
+
+      <div class="footer-note">
+        Use this portal only with email accounts and recipients you are
+        authorized to test.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="/app.js"></script>
+
+</body>
+</html>
